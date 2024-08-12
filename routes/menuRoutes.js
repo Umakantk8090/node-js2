@@ -2,7 +2,7 @@ const express=require('express');
 const router=express.Router();
 const menuItem=require('../models/menu');
 
-router.post('/menu', async(req,res)=>{
+router.post('/', async(req,res)=>{
   try {
     const data=req.body
   const newMenu=new menuItem(data);
@@ -16,7 +16,7 @@ router.post('/menu', async(req,res)=>{
   }
   
 });
-router.get('/menu', async(req,res)=>{
+router.get('/', async(req,res)=>{
  try {
   const data=await menuItem.find();
   console.log('menu data fetched');
